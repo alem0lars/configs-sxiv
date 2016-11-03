@@ -1,0 +1,5 @@
+sxiv:
+  clip_copy_cmd: xsel -i
+
+
+# vim: set filetype=eruby.yaml :
