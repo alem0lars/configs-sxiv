@@ -1,0 +1,9 @@
+elems:
+
+  - src:   ^(key-handler|image-info)$
+    dst:   '<%= xdg_config_home :sxiv %>/exec/<1>'
+    perms: 755
+    only:  f?sxiv
+
+
+# vim: set filetype=eruby.yaml :
