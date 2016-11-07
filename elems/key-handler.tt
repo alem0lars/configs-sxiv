@@ -71,18 +71,16 @@ rotate() {
   done
 }
 
-# TODO: check if it works
 tag_add() {
   for file in "$@"; do
-    local tag=$(tmsu tags | dmenu)
-    tmsu tag "${file}" "${tag}"
+    local tag="$(tmsu --color=never tags | dmenu)"
+    tmsu --color=never tag "${file}" "${tag}"
   done
 }
 
-# TODO: check if it works
 tag_del() {
   for file in "$@"; do
-    local tag=$(tmsu tags "${file}" | dmenu)
+    local tag="$(tmsu --color=never tags -n "${file}" | cut -d " " -f 2- | tr " " "\n" | dmenu)"
     tmsu untag "${file}" "${tag}"
   done
 }
